@@ -63,7 +63,7 @@ function ImpUI_Target:StyleFrame()
     -- Update Health Bar Size
     TargetFrame.healthbar:SetHeight(29);
     TargetFrame.healthbar:SetPoint('TOPLEFT',7,-22);
-    TargetFrame.healthbar.TextString:SetPoint('CENTER',-50,6);
+    -- TargetFrame.healthbar.TextString:SetPoint('CENTER',-50,6);
     TargetFrame.deadText:SetPoint('CENTER',-50,6);
     TargetFrame.nameBackground:Hide();
     TargetFrame.Background:SetPoint('TOPLEFT',7,-22);
@@ -86,23 +86,14 @@ function ImpUI_Target:StyleFrame()
     -- Fonts
     local font = Helpers.get_styled_font(ImpUI.db.char.primaryInterfaceFont);
 
-    TargetFrameTextureFrameHealthBarText:SetTextColor(font.r, font.g, font.b, font.a);
     TargetFrameTextureFrameName:SetTextColor(font.r, font.g, font.b, font.a);
 
     TargetFrameTextureFrameName:SetFont(font.font, 11, font.flags);
 
-    TargetFrameTextureFrameHealthBarText:SetFont(font.font, 10, font.flags);
-    TargetFrameTextureFrameHealthBarTextLeft:SetFont(font.font, 10, font.flags);
-    TargetFrameTextureFrameHealthBarTextRight:SetFont(font.font, 10, font.flags);
-    
-    TargetFrameTextureFrameManaBarText:SetFont(font.font, 10, font.flags);
-    TargetFrameTextureFrameManaBarTextLeft:SetFont(font.font, 10, font.flags);
-    TargetFrameTextureFrameManaBarTextRight:SetFont(font.font, 10, font.flags);
-
     TargetFrameTextureFrameLevelText:SetFont(font.font, 10, font.flags);
     TargetFrameTextureFrameLevelText:SetTextColor(font.r, font.g, font.b, font.a);
     TargetFrameTextureFrameLevelText:ClearAllPoints();
-    TargetFrameTextureFrameLevelText:SetPoint('RIGHT', -41, -16);
+    TargetFrameTextureFrameLevelText:SetPoint('RIGHT', -45, -16);
 
     if ( TargetFrame.totFrame ) then
         TargetFrameToTTextureFrameName:SetFont(font.font, 11, font.flags);

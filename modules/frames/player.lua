@@ -105,10 +105,6 @@ function ImpUI_Player:StyleFrame()
     PlayerFrameManaBarTextLeft:SetFont(font, 10, flags);
     PlayerFrameManaBarTextRight:SetFont(font, 10, flags);
 
-    PlayerFrameAlternateManaBarText:SetFont(font, 10, flags);
-    PlayerFrameAlternateManaBar.RightText:SetFont(font, 10, flags);
-    PlayerFrameAlternateManaBar.LeftText:SetFont(font, 10, flags);
-
     PlayerName:SetTextColor(r, g, b, a);
 
     PetName:SetFont(font, 11, flags);
@@ -173,28 +169,6 @@ function ImpUI_Player:PLAYER_TARGET_CHANGED()
         ImpUI_Player:TogglePlayer(false);
     else
         ImpUI_Player:TogglePlayer(true);
-    end
-end
-
---[[
-	Fires when the Player exits a vehicle.
-	
-    @ return void
-]]
-function ImpUI_Player:UNIT_EXITED_VEHICLE(event, ...)
-    if (... == 'player') then
-        ImpUI_Player:StyleFrame();
-    end
-end
-
---[[
-	Fires when the Player enters a vehicle.
-	
-    @ return void
-]]
-function ImpUI_Player:UNIT_ENTERED_VEHICLE(event, ...)
-    if (... == 'player') then
-        ImpUI_Player:StyleFrame();
     end
 end
 
@@ -264,8 +238,6 @@ function ImpUI_Player:OnEnable()
     self:RegisterEvent('PLAYER_REGEN_DISABLED');
     self:RegisterEvent('PLAYER_REGEN_ENABLED');
     self:RegisterEvent('PLAYER_TARGET_CHANGED');
-    self:RegisterEvent('UNIT_EXITED_VEHICLE');
-    self:RegisterEvent('UNIT_ENTERED_VEHICLE');
 
     -- Register Hooks
     self:SecureHook('CombatFeedback_OnCombatEvent', 'CombatFeedback_OnCombatEvent');
