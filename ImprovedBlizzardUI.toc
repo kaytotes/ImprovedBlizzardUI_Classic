@@ -26,7 +26,7 @@ modules/misc/osd.lua
 #modules/misc/afkmode.lua
 #modules/misc/autorepair.lua
 #modules/misc/autosell.lua
-#modules/misc/chat.lua
+modules/misc/chat.lua
 #modules/misc/killfeed.lua
 modules/misc/performance.lua
 #modules/misc/tooltips.lua

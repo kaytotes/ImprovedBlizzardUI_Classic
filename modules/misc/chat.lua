@@ -203,11 +203,6 @@ function ImpUI_Chat:StyleChat()
     ImpUI_Chat:HookScript(ChatFrameChannelButton, 'OnShow', ChatFrameChannelButton.Hide);
     ChatFrameChannelButton:Hide();
 
-    -- Hide Battle.net / Social Button
-    local button = QuickJoinToastButton or FriendsMicroButton;
-    ImpUI_Chat:HookScript(button, 'OnShow', button.Hide);
-    button:Hide();
-
     -- Move Battle.net Toast
     BNToastFrame:SetClampedToScreen(true);
     BNToastFrame:SetClampRectInsets(-15,15,15,-15);
