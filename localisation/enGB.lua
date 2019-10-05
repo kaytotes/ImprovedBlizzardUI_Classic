@@ -15,9 +15,6 @@ L['After you go AFK the interface will fade away, pan your camera and display yo
 -- Auto Repair
 L['Auto Repair'] = true;
 L['Automatically repairs your armour when you visit a merchant that can repair.'] = true;
-L['Use Guild Bank For Repairs'] = true;
-L['When automatically repairing allow the use of Guild Bank funds.'] = true;
-L['Items Repaired from Guild Bank'] = true;
 L['Items Repaired'] = true;
 
 -- Auto Sell

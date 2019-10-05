@@ -11,7 +11,6 @@ ImpUI_Config.defaults = {
         primaryInterfaceFont = 'Improved Blizzard UI',
         afkMode = true,
         autoRepair = true,
-        guildRepair = true,
         autoSell = true,
         minifyStrings = true,
         styleChat = true,
@@ -1174,21 +1173,6 @@ ImpUI_Config.options = {
                         ImpUI.db.char.autoRepair = newValue;
                     end,
                     order = 2,
-                },
-                guildRepair = {
-                    type = 'toggle',
-                    name = L['Use Guild Bank For Repairs'],
-                    desc = L['When automatically repairing allow the use of Guild Bank funds.'],
-                    get = function ()
-                        return ImpUI.db.char.guildRepair;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.guildRepair = newValue;
-                    end,
-                    disabled = function ()
-                        return ImpUI.db.char.autoRepair == false;
-                    end,
-                    order = 3,
                 },
                 autoSell = {
                     type = 'toggle',
