@@ -35,7 +35,7 @@ function ImpUI_Buffs:Lock()
 end
 
 --[[
-	Loads the position of the Focus Frame from SavedVariables.
+	Loads the position of the Buff Frame from SavedVariables.
 ]]
 function ImpUI_Buffs:LoadPosition()
     local pos = ImpUI.db.char.buffsPosition;

@@ -92,10 +92,9 @@ L['Unit Frames'] = true;
 L['Player Frame'] = true;
 L['Target Frame'] = true;
 L['Party Frames'] = true;
-L['Focus Frame'] = true;
 
 L['Style Unit Frames'] = true;
-L['Applies modified textures and font styling to the Player, Target, Party and Focus Frames. This will trigger a UI Reload!'] = true;
+L['Applies modified textures and font styling to the Player, Target and Party Frames. This will trigger a UI Reload!'] = true;
 L['Display Class Colours'] = true;
 L['Hide Portrait Spam'] = true;
 L['Hides the damage text that appears over the Player portrait when damaged or healed.'] = true;
@@ -107,9 +106,6 @@ L['Displays the Targets Buffs above the Unit Frame.'] = true;
 L['ToT Class Colours'] = true;
 L['Colours Target of Target Health bar to match their class.'] = true;
 L['Party Frame Scale'] = true;
-L['Colours Focus Frame Health bar to match their class.'] = true;
-L['Displays the Focus Targets Buffs above the Unit Frame.'] = true;
-L['Focus Frame Scale'] = true;
 
 -- Tooltips
 L['Tooltips'] = true;
@@ -208,10 +204,6 @@ L['Bars'] = true;
 L['Cast Bar'] = true;
 L['Player Cast Timer'] = true;
 L['Displays a Timer on the Players Cast Bar.'] = true;
-L['Target Cast Timer'] = true;
-L['Displays a Timer on the Targets Cast Bar.'] = true;
-L['Focus Cast Timer'] = true;
-L['Displays a Timer on the Focus Cast Bar.'] = true;
 
 -- Buffs
 L['Buffs & Debuffs'] = true;

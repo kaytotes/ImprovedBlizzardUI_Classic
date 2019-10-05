@@ -71,11 +71,6 @@ ImpUI_Config.defaults = {
         partyFrameScale = 1.4,
         partyFramePosition = Helpers.pack_position('CENTER', nil, 'CENTER', -550, 100),
 
-        focusFrameScale = 0.9,
-        focusFramePosition = Helpers.pack_position('CENTER', nil, 'CENTER', -500.0, -250.0),
-        focusClassColours = true,
-        focusBuffsOnTop = true,
-
         killFeed = true,
         killFeedFont = 'Improved Blizzard UI',
         killFeedSize = 17,
@@ -101,7 +96,6 @@ ImpUI_Config.defaults = {
         castBarPosition = Helpers.pack_position('CENTER', nil, 'CENTER', 0, -175);
         castBarPlayerTimer = true,
         castBarTargetTimer = true,
-        castBarFocusTimer = true,
         castBarFontSize = 13,
 
         buffsPosition = Helpers.pack_position('TOPRIGHT', nil, 'TOPRIGHT', -200, -25),
@@ -128,7 +122,7 @@ ImpUI_Config.options = {
                 styleUnitFrames = {
                     type = 'toggle',
                     name = L['Style Unit Frames'],
-                    desc = L['Applies modified textures and font styling to the Player, Target, Party and Focus Frames. This will trigger a UI Reload!'],
+                    desc = L['Applies modified textures and font styling to the Player, Target and Party Frames. This will trigger a UI Reload!'],
                     get = function ()
                         return ImpUI.db.char.styleUnitFrames;
                     end,
@@ -281,63 +275,6 @@ ImpUI_Config.options = {
                     isPercent = false,
                     order = 12,
                 },
-
-                -- Focus Frames Section
-                focusHeader = {
-                    type = 'header',
-                    name = L['Focus Frame'],
-                    order = 13,
-                },
-
-                focusClassColours = {
-                    type = 'toggle',
-                    name = L['Display Class Colours'],
-                    desc = L['Colours Focus Frame Health bar to match their class.'],
-                    get = function ()
-                        return ImpUI.db.char.focusClassColours;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.focusClassColours = newValue;
-                        ImpUI_Focus:ToggleClassColours(newValue);
-                    end,
-                    order = 14,
-                },
-
-                focusBuffsOnTop = {
-                    type = 'toggle',
-                    name = L['Buffs On Top'],
-                    desc = L['Displays the Focus Targets Buffs above the Unit Frame.'],
-                    get = function ()
-                        return ImpUI.db.char.focusBuffsOnTop;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.focusBuffsOnTop = newValue;
-                        
-                        if(UnitExists('focus') == true) then 
-                            FocusFrame.buffsOnTop = newValue;
-                        end
-                    end,
-                    order = 14,
-                },
-
-                focusFrameScale = {
-                    type = 'range',
-                    name = L['Focus Frame Scale'],
-                    desc = '',
-                    min = 0.1,
-                    max = 4.0,
-                    step = 0.1,
-                    get = function ()
-                        return ImpUI.db.char.focusFrameScale;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.focusFrameScale = newValue; 
-
-                        ImpUI_Focus:LoadPosition();
-                    end,
-                    isPercent = false,
-                    order = 16,
-                },
             }
         },
 
@@ -406,36 +343,6 @@ ImpUI_Config.options = {
                         ImpUI_CastBar:StyleFrame();
                     end,
                     order = 4,
-                },
-
-                castBarTargetTimer = {
-                    type = 'toggle',
-                    name = L['Target Cast Timer'],
-                    desc = L['Displays a Timer on the Targets Cast Bar.'],
-                    get = function ()
-                        return ImpUI.db.char.castBarTargetTimer;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.castBarTargetTimer = newValue;
-
-                        ImpUI_CastBar:StyleFrame();
-                    end,
-                    order = 5,
-                },
-
-                castBarFocusTimer = {
-                    type = 'toggle',
-                    name = L['Focus Cast Timer'],
-                    desc = L['Displays a Timer on the Focus Cast Bar.'],
-                    get = function ()
-                        return ImpUI.db.char.castBarFocusTimer;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.castBarFocusTimer = newValue;
-
-                        ImpUI_CastBar:StyleFrame();
-                    end,
-                    order = 6,
                 },
 
                 -- Buff Bar Section
