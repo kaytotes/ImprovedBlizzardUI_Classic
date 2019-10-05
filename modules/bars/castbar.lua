@@ -68,10 +68,8 @@ end
 	Actually does the heavy lifting of styling the bars.
 ]]
 function ImpUI_CastBar:StyleFrame()
-    -- Kill If Needed
-    KillTimer(CastingBarFrame);
-    KillTimer(TargetFrameSpellBar);
-    KillTimer(FocusFrameSpellBar);
+    
+    KillTimer(CastingBarFrame); -- Kill If Needed
 
     -- Get Font
     font = Helpers.get_styled_font(ImpUI.db.char.primaryInterfaceFont);
@@ -83,16 +81,6 @@ function ImpUI_CastBar:StyleFrame()
     -- Cast Bar
     if (ImpUI.db.char.castBarPlayerTimer) then
         CreateCastingTimer(CastingBarFrame, Helpers.pack_position('TOP', nil, 'BOTTOM', 0, 35));
-    end
-    
-    -- Target Frame
-    if (ImpUI.db.char.castBarTargetTimer) then
-        CreateCastingTimer(TargetFrameSpellBar, Helpers.pack_position('TOP', nil, 'BOTTOM', 0, 28));
-    end
-
-    -- Focus Frame
-    if (ImpUI.db.char.castBarFocusTimer) then
-        CreateCastingTimer(FocusFrameSpellBar, Helpers.pack_position('TOP', nil, 'BOTTOM', 0, -8));    
     end
 end
 
@@ -115,7 +103,7 @@ function ImpUI_CastBar:Lock()
 end
 
 --[[
-	Loads the position of the Focus Frame from SavedVariables.
+	Loads the position of the Castbar Frame from SavedVariables.
 ]]
 function ImpUI_CastBar:LoadPosition()
     local pos = ImpUI.db.char.castBarPosition;
@@ -124,7 +112,7 @@ function ImpUI_CastBar:LoadPosition()
     -- Set Drag Frame Position
     dragFrame:SetPoint(pos.point, pos.relativeTo, pos.relativePoint, pos.x, pos.y);
 
-    -- Parent Focus Frame to the Drag Frame.
+    -- Parent Castbar Frame to the Drag Frame.
     CastingBarFrame:SetMovable(true);
     CastingBarFrame:ClearAllPoints();
     CastingBarFrame:SetPoint('CENTER', dragFrame, 'CENTER', 0, 0);
