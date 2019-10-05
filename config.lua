@@ -10,7 +10,6 @@ ImpUI_Config.defaults = {
     char = {
         primaryInterfaceFont = 'Improved Blizzard UI',
         afkMode = true,
-        autoScreenshot = true,
         autoRepair = true,
         guildRepair = true,
         autoSell = true,
@@ -1202,18 +1201,6 @@ ImpUI_Config.options = {
                         ImpUI.db.char.autoSell = newValue;
                     end,
                     order = 4,
-                },
-                autoScreenshot = {
-                    type = 'toggle',
-                    name = L['Achievement Screenshot'],
-                    desc = L['Automatically take a screenshot upon earning an achievement.'],
-                    get = function ()
-                        return ImpUI.db.char.autoScreenshot;
-                    end,
-                    set = function (info, newValue)
-                        ImpUI.db.char.autoScreenshot = newValue;
-                    end,
-                    order = 5,
                 },
 
                 -- Chat Section

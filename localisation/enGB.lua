@@ -12,10 +12,6 @@ L['Miscellaneous'] = true;
 L['Enable AFK Mode'] = true;
 L['After you go AFK the interface will fade away, pan your camera and display your Character in all their glory.'] = true;
 
--- Auto Screenshot
-L['Achievement Screenshot'] = true;
-L['Automatically take a screenshot upon earning an achievement.'] = true;
-
 -- Auto Repair
 L['Auto Repair'] = true;
 L['Automatically repairs your armour when you visit a merchant that can repair.'] = true;
