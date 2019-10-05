@@ -29,8 +29,8 @@ local draggable = {
     'ImpUI_Player',
     'ImpUI_Target',
     -- 'ImpUI_Party',
-    -- 'ImpUI_CastBar',
-    -- 'ImpUI_Buffs',
+    'ImpUI_CastBar',
+    'ImpUI_Buffs',
 };
 
 local isEditing = false;
