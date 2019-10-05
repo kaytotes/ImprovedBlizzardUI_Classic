@@ -40,4 +40,4 @@ modules/frames/player.lua
 modules/frames/target.lua
 #modules/frames/party.lua
 modules/bars/castbar.lua
-#modules/bars/buffs.lua
+modules/bars/buffs.lua
