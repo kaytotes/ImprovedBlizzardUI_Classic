@@ -28,14 +28,14 @@ modules/misc/osd.lua
 #modules/misc/autosell.lua
 #modules/misc/chat.lua
 #modules/misc/killfeed.lua
-#modules/misc/performance.lua
+modules/misc/performance.lua
 #modules/misc/tooltips.lua
 #modules/misc/grid.lua
 #modules/combat/healthwarning.lua
 #modules/combat/interrupts.lua
 #modules/combat/killingblows.lua
 #modules/combat/autorelease.lua
-#modules/maps/minimap.lua
+modules/maps/minimap.lua
 #modules/frames/player.lua
 #modules/frames/target.lua
 #modules/frames/party.lua
