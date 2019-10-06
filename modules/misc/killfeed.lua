@@ -222,6 +222,8 @@ end
 function ImpUI_Killfeed:Unlock()
     dragFrame:Show();
 
+    killfeed:SetParent(dragFrame);
+
     -- Fill with test data.
     ImpUI_Killfeed:OutputTestMessages();
 end
@@ -232,6 +234,8 @@ function ImpUI_Killfeed:Lock()
 
     -- Store Position
     ImpUI.db.char.killFeedPosition = Helpers.pack_position(point, relativeTo, relativePoint, xOfs, yOfs);
+
+    killfeed:SetParent(UIParent);
 
     -- Clear Test Data
     ImpUI_Killfeed:ClearKillFeed();
@@ -289,6 +293,8 @@ function ImpUI_Killfeed:OnEnable()
     killfeed:SetPoint('TOPLEFT', dragFrame, 'TOPLEFT', 10, 15);
 
     ImpUI_Killfeed:LoadPosition();
+
+    killfeed:SetParent(UIParent);
 
     killfeed:SetFrameStrata('HIGH');
     killfeed:SetWidth(256);

@@ -25,7 +25,7 @@ end
 -- The Modules / Elements that can be moved.
 local draggable = {
     'ImpUI_OSD',
-    -- 'ImpUI_Killfeed',
+    'ImpUI_Killfeed',
     'ImpUI_Player',
     'ImpUI_Target',
     -- 'ImpUI_Party',
