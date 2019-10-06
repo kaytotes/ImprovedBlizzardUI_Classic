@@ -32,12 +32,12 @@ modules/misc/performance.lua
 modules/misc/tooltips.lua
 modules/misc/grid.lua
 modules/combat/healthwarning.lua
-#modules/combat/interrupts.lua
+modules/combat/interrupts.lua
 modules/combat/killingblows.lua
-#modules/combat/autorelease.lua
+modules/combat/autorelease.lua
 modules/maps/minimap.lua
 modules/frames/player.lua
 modules/frames/target.lua
-#modules/frames/party.lua
+modules/frames/party.lua
 modules/bars/castbar.lua
 modules/bars/buffs.lua
