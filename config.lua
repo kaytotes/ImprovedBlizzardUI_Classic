@@ -56,19 +56,19 @@ ImpUI_Config.defaults = {
 
         styleUnitFrames = true,
         
-        playerFrameScale = 1.2,
+        playerFrameScale = 1.1,
         playerFramePosition = Helpers.pack_position('CENTER', nil, 'CENTER', -305.16, -160.82),
         playerClassColours = true,
         playerHidePortraitSpam = true,
         playerHideOOC = true,
 
-        targetFrameScale = 1.2,
+        targetFrameScale = 1.1,
         targetFramePosition = Helpers.pack_position('CENTER', nil, 'CENTER', 305.16, -160.82),
         targetClassColours = true,
         targetBuffsOnTop = true,
         targetOfTargetClassColours = true,
 
-        partyFrameScale = 1.4,
+        partyFrameScale = 1.2,
         partyFramePosition = Helpers.pack_position('CENTER', nil, 'CENTER', -550, 100),
 
         killFeed = true,
@@ -248,6 +248,25 @@ ImpUI_Config.options = {
                         TargetFrame:Hide();
                     end,
                     order = 10,
+                },
+
+                targetFrameScale = {
+                    type = 'range',
+                    name = L['Target Frame Scale'],
+                    desc = '',
+                    min = 0.1,
+                    max = 4.0,
+                    step = 0.1,
+                    get = function ()
+                        return ImpUI.db.char.targetFrameScale;
+                    end,
+                    set = function (info, newValue)
+                        ImpUI.db.char.targetFrameScale = newValue; 
+
+                        ImpUI_Target:LoadPosition();
+                    end,
+                    isPercent = false,
+                    order = 6,
                 },
 
                 -- Party Frames Section

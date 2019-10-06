@@ -101,6 +101,7 @@ L['Hides the damage text that appears over the Player portrait when damaged or h
 L['Hide Out of Combat'] = true;
 L['Hides the Player Frame when you are out of combat, have no target and are at full health.'] = true;
 L['Player Frame Scale'] = true;
+L['Target Frame Scale'] = true;
 L['Buffs On Top'] = true;
 L['Displays the Targets Buffs above the Unit Frame.'] = true;
 L['ToT Class Colours'] = true;
