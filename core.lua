@@ -131,5 +131,5 @@ function ImpUI:OnInitialize()
     self:RegisterChatCommand('imp', 'HandleSlash');
 
     -- Finally print Intialized Message.
-    print('|cffffff00Improved Blizzard UI ' .. GetAddOnMetadata('ImprovedBlizzardUI', 'Version') .. ' (Classic Edition) Initialized.');
+    print('|cffffff00Improved Blizzard UI ' .. GetAddOnMetadata('ImprovedBlizzardUI', 'Version') .. ' (Classic Edition - Beta) Initialized.');
 end
