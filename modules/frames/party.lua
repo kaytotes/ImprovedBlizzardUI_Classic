@@ -62,10 +62,34 @@ function ImpUI_Party:LoadPosition()
 end
 
 --[[
+	Hides Debug Party Frames if not in Group.
+]]
+function HideFrames()
+    if (IsInGroup()) then return end
+
+    for i = 1, 4 do
+        _G["PartyMemberFrame"..i]:Hide();
+    end
+end
+
+--[[
+	Shows Debug Party Frames if not in Group.
+]]
+function ShowFrames()
+    if (IsInGroup()) then return end
+
+    for i = 1, 4 do
+        _G["PartyMemberFrame"..i]:Show();
+    end
+end
+
+--[[
 	Called when unlocking the UI.
 ]]
 function ImpUI_Party:Unlock()
     dragFrame:Show();
+
+    ShowFrames();
 end
 
 --[[
@@ -75,6 +99,8 @@ function ImpUI_Party:Lock()
     local point, relativeTo, relativePoint, xOfs, yOfs = dragFrame:GetPoint();
 
     ImpUI.db.char.partyFramePosition = Helpers.pack_position(point, relativeTo, relativePoint, xOfs, yOfs);
+
+    HideFrames();
 
     dragFrame:Hide();
 end
