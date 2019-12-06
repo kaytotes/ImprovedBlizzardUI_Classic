@@ -8,12 +8,13 @@ Due to the drastic differences between Classic and Mainline WoW this has been fo
 # Addon Installation
 
 * To install Improved Blizzard UI place the folder into `World of Warcraft//_classic_//Interface//Addons` as you would any other addon.
-* Once installed if need be customize your installation with `/imp`.
 
 # Features
 
-## Libraries
+## Customisation
 
+* Once installed if need be customize your installation with `/imp`.
+* Most UI elements can now be repositioned with `/imp unlock` and `/imp lock`.
 * LibSharedMedia-3.0 Support for customising fonts. Any fonts loaded by LSM will be available in Improved Blizzard UI and vice versa. You may now easily use the Improved Blizzard UI in other addons such as Recount, DBM etc.
 
 ## Miscellaneous
