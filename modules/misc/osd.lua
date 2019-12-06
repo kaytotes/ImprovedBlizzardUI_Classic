@@ -63,6 +63,8 @@ function ImpUI_OSD:Lock()
 
     osd:SetParent(UIParent);
 
+    self:AddMessage('', 'Improved Blizzard UI', 26, 1, 1, 0, 1.0);
+
     dragFrame:Hide();
 end
 
