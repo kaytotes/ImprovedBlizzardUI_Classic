@@ -1,8 +1,8 @@
 -- Create Ace3 Addon.
-ImpUI = LibStub('AceAddon-3.0'):NewAddon('ImprovedBlizzardUI', 'AceConsole-3.0', 'AceHook-3.0');
+ImpUI = LibStub('AceAddon-3.0'):NewAddon('ImprovedBlizzardUI_Classic', 'AceConsole-3.0', 'AceHook-3.0');
 
 -- Get Localisation
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- LibSharedMedia-3.0
 LSM = LibStub('LibSharedMedia-3.0');
@@ -116,20 +116,20 @@ end
 ]]
 function ImpUI:OnInitialize()
     -- Set up Improved Blizzard UI font.
-    LSM:Register(LSM.MediaType.FONT, 'Improved Blizzard UI', [[Interface\AddOns\ImprovedBlizzardUI\media\ImprovedBlizzardUI.ttf]]);
+    LSM:Register(LSM.MediaType.FONT, 'Improved Blizzard UI', [[Interface\AddOns\ImprovedBlizzardUI_Classic\media\ImprovedBlizzardUI.ttf]]);
 
     -- Set up DB
     self.db = LibStub('AceDB-3.0'):New('ImpUI_DB', ImpUI_Config.defaults, true);
 
     -- Register Config
-    LibStub('AceConfig-3.0'):RegisterOptionsTable('ImprovedBlizzardUI', ImpUI_Config.options);
+    LibStub('AceConfig-3.0'):RegisterOptionsTable('ImprovedBlizzardUI_Classic', ImpUI_Config.options);
 
     -- Add to Blizz Config
-    self.optionsFrame = LibStub('AceConfigDialog-3.0'):AddToBlizOptions('ImprovedBlizzardUI', 'Improved Blizzard UI');
+    self.optionsFrame = LibStub('AceConfigDialog-3.0'):AddToBlizOptions('ImprovedBlizzardUI_Classic', 'Improved Blizzard UI');
 
     -- Register Slash Command
     self:RegisterChatCommand('imp', 'HandleSlash');
 
     -- Finally print Intialized Message.
-    print('|cffffff00Improved Blizzard UI ' .. GetAddOnMetadata('ImprovedBlizzardUI', 'Version') .. ' (Classic Edition - Beta) Initialized.');
+    print('|cffffff00Improved Blizzard UI (Classic Edition) - ' .. GetAddOnMetadata('ImprovedBlizzardUI_Classic', 'Version') .. ' Initialized.');
 end

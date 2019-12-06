@@ -6,7 +6,7 @@
 ImpUI_Player = ImpUI:NewModule('ImpUI_Player', 'AceEvent-3.0', 'AceHook-3.0');
 
 -- Get Locale
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- Local Variables
 local dragFrame;
@@ -87,8 +87,8 @@ function ImpUI_Player:StyleFrame()
     if (InCombatLockdown() == true) then return end
 
     -- Change Texture
-    PlayerFrameTexture:SetTexture('Interface\\AddOns\\ImprovedBlizzardUI\\media\\UI-TargetingFrame');
-    PlayerStatusTexture:SetTexture('Interface\\AddOns\\ImprovedBlizzardUI\\media\\UI-Player-Status');
+    PlayerFrameTexture:SetTexture('Interface\\AddOns\\ImprovedBlizzardUI_Classic\\media\\UI-TargetingFrame');
+    PlayerStatusTexture:SetTexture('Interface\\AddOns\\ImprovedBlizzardUI_Classic\\media\\UI-Player-Status');
 
     -- Update Health Bar Size
     PlayerFrameHealthBar:SetWidth(119);

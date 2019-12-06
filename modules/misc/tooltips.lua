@@ -5,7 +5,7 @@
 ImpUI_Tooltips = ImpUI:NewModule('ImpUI_Tooltips', 'AceEvent-3.0', 'AceHook-3.0');
 
 -- Get Locale
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- Local Variables
 local unitClassification = {

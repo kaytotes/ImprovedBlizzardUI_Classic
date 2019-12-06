@@ -1,5 +1,5 @@
 -- Get Localisation
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 ImpUI_Config = {};
 
@@ -107,7 +107,7 @@ ImpUI_Config.defaults = {
 	Configuration Menu.
 ]]
 ImpUI_Config.options = {
-    name = 'Improved Blizzard UI - '..GetAddOnMetadata('ImprovedBlizzardUI', 'Version'),
+    name = 'Improved Blizzard UI - '..GetAddOnMetadata('ImprovedBlizzardUI_Classic', 'Version'),
     handler = ImpUI,
     type = 'group',
     childGroups = "tab",

@@ -9,7 +9,7 @@
 ImpUI_Fonts = ImpUI:NewModule('ImpUI_Fonts', 'AceEvent-3.0');
 
 -- Get Locale
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- Local Variables
 local OSD;

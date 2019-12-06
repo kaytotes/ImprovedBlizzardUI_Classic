@@ -5,7 +5,7 @@
 local ImpUI_Interrupts = ImpUI:NewModule('ImpUI_Interrupts', 'AceEvent-3.0');
 
 -- Get Locale
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- Local Functions
 local CombatLogGetCurrentEventInfo = CombatLogGetCurrentEventInfo;

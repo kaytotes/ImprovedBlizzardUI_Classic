@@ -7,7 +7,7 @@ clear
 echo ""
 
 echo "================================================================="
-echo "Beginning Improved Blizzard UI Scaffolding"
+echo "Beginning Improved Blizzard UI (Classic Edition) Scaffolding"
 echo "================================================================="
 
 echo ""
@@ -23,7 +23,7 @@ echo "================================================================="
 
 echo ""
 
-cp -a .release/ImprovedBlizzardUI/libs/. libs
+cp -a .release/ImprovedBlizzardUI_Classic/libs/. libs
 
 echo ""
 
@@ -33,8 +33,8 @@ echo "================================================================="
 
 echo ""
 
-rm -rf .release/ImprovedBlizzardUI
-rm -rf .release/ImprovedBlizzardUI-*
+rm -rf .release/ImprovedBlizzardUI_Classic
+rm -rf .release/ImprovedBlizzardUI_Classic-*
 
 clear
 

@@ -1,5 +1,5 @@
 ## Interface: 11302
-## Title: Improved Blizzard UI (Classic Edition - Beta)
+## Title: Improved Blizzard UI (Classic Edition)
 ## Notes: A variety of improvements to the default Blizzard UI (Classic Edition).
 ## Version: @project-version@
 ## Author: Kaytotes

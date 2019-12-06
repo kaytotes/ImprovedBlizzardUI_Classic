@@ -1,4 +1,4 @@
-package-as: ImprovedBlizzardUI
+package-as: ImprovedBlizzardUI_Classic
 
 manual-changelog:
    filename: CHANGELOG.md

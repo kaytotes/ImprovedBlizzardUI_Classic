@@ -5,7 +5,7 @@
 ImpUI_Target = ImpUI:NewModule('ImpUI_Target', 'AceEvent-3.0', 'AceHook-3.0');
 
 -- Get Locale
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- Local Variables
 local dragFrame;
@@ -48,13 +48,13 @@ function ImpUI_Target:StyleFrame()
     -- Figure out what texture we need.
     local frameTexture;
     if ( unitClassification == 'worldboss' or unitClassification == 'elite' ) then
-		frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI\\media\\UI-TargetingFrame-Elite';
+		frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI_Classic\\media\\UI-TargetingFrame-Elite';
 	elseif ( unitClassification == 'rareelite' ) then
-		frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI\\media\\UI-TargetingFrame-Rare-Elite';
+		frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI_Classic\\media\\UI-TargetingFrame-Rare-Elite';
 	elseif ( unitClassification == 'rare' ) then
-        frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI\\media\\UI-TargetingFrame-Rare';
+        frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI_Classic\\media\\UI-TargetingFrame-Rare';
     else
-        frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI\\media\\UI-TargetingFrame';
+        frameTexture = 'Interface\\Addons\\ImprovedBlizzardUI_Classic\\media\\UI-TargetingFrame';
 	end
 
     -- Apply It

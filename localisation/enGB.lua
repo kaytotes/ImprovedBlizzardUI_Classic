@@ -4,7 +4,7 @@
 
     Essentially the default.
 ]]
-local L = LibStub('AceLocale-3.0'):NewLocale('ImprovedBlizzardUI', 'enGB', true);
+local L = LibStub('AceLocale-3.0'):NewLocale('ImprovedBlizzardUI_Classic', 'enGB', true);
 
 L['Miscellaneous'] = true;
 

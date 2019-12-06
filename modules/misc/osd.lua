@@ -6,7 +6,7 @@
 local ImpUI_OSD = ImpUI:NewModule('ImpUI_OSD', 'AceEvent-3.0');
 
 -- Get Locale
-local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI');
+local L = LibStub('AceLocale-3.0'):GetLocale('ImprovedBlizzardUI_Classic');
 
 -- Variables
 local osd;
