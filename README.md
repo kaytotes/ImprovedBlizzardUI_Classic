@@ -1,12 +1,20 @@
 Improved Blizzard UI (Classic Edition)
 ====================
 
+Improved Blizzard UI is an attempt to improve the World of Warcraft interface by styling frames, implementing additional functionality and restructuring / hiding existing elements.
+
+Due to the drastic differences between Classic and Mainline WoW this has been forked to it's own thing.
+
 # Addon Installation
 
 * To install Improved Blizzard UI place the folder into `World of Warcraft//_classic_//Interface//Addons` as you would any other addon.
 * Once installed if need be customize your installation with `/imp`.
 
 # Features
+
+## Libraries
+
+* LibSharedMedia-3.0 Support for customising fonts. Any fonts loaded by LSM will be available in Improved Blizzard UI and vice versa. You may now easily use the Improved Blizzard UI in other addons such as Recount, DBM etc.
 
 ## Miscellaneous
 
@@ -48,12 +56,8 @@ Improved Blizzard UI (Classic Edition)
 
 ## Action Bars
 
-* Out of Range Indicator.
-* Customizable Texts.
 * Casting Bar Repositioned and Scaled.
-* Improved Fonts.
 * Scaleable Buffs and Debuffs.
-* Micro Menu and Bags Hidden (Show with Mini Map Menu).
 
 ## Mini Map
 
@@ -62,7 +66,6 @@ Improved Blizzard UI (Classic Edition)
 * System Performance Statistics.
 * Scroll Wheel Zoom.
 * Improved Fonts.
-* Right Click Micro Menu.
 
 ## Tooltips
 
@@ -86,8 +89,5 @@ Improved Blizzard UI (Classic Edition)
 * Low Health Warnings (50% and 25%).
 * Interrupt Announcements.
 * Instanced Content Player Kill Feed.
-
-## PvP
-
 * Highlighted Killing Blows.
-* Instant Battleground Ressurection.
+* Instant Ressurection.
