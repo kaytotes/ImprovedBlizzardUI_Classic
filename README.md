@@ -5,6 +5,11 @@ Improved Blizzard UI is an attempt to improve the World of Warcraft interface by
 
 Due to the drastic differences between Classic and Mainline WoW this has been forked to it's own thing.
 
+This is a complete ground up rewrite using Ace3 to make porting between versions a bit easier and the upgrade process between patches smoother.
+
+![WoWScrnShot_120619_055018](https://user-images.githubusercontent.com/7526918/70299451-d74ba100-17ec-11ea-88fa-640d90643ef2.jpg)
+![WoWScrnShot_120619_055244](https://user-images.githubusercontent.com/7526918/70299456-d9156480-17ec-11ea-876f-912ddc83ed88.jpg)
+
 # Addon Installation
 
 * To install Improved Blizzard UI place the folder into `World of Warcraft//_classic_//Interface//Addons` as you would any other addon.
