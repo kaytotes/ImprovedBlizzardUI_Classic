@@ -10,6 +10,18 @@ This is a complete ground up rewrite using Ace3 to make porting between versions
 ![WoWScrnShot_120619_055018](https://user-images.githubusercontent.com/7526918/70299451-d74ba100-17ec-11ea-88fa-640d90643ef2.jpg)
 ![WoWScrnShot_120619_055244](https://user-images.githubusercontent.com/7526918/70299456-d9156480-17ec-11ea-876f-912ddc83ed88.jpg)
 
+# Project Development Setup
+
+To get a working installation of Improved Blizzard UI you must first clone the repository to a directory of your choosing. 
+
+Execute `./setup.sh` - This will pull in all dependencies and put them in the libs folder.
+
+This will require you to have the following:
+
+- SVN CMD (Eg, [SlikSVN](https://sliksvn.com/download/)) 
+- ZIP Extension (If on Windows install [Cygwin](https://www.cygwin.com/))
+- Ability to open shell files (Eg, [Git BASH](https://gitforwindows.org/))
+
 # Addon Installation
 
 * To install Improved Blizzard UI place the folder into `World of Warcraft//_classic_//Interface//Addons` as you would any other addon.
