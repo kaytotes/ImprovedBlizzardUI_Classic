@@ -1,6 +1,7 @@
 # Improved Blizzard UI (Classic Edition ) Changelog
 
-3.0.0 - Classic Port (1.13.2)
+1.0.1 - Patch 1.13.3 ToC Bump
+1.0.0 - Classic Port (Version Refresh due to Fork).
 2.2.0 - German localisation (Credit @Marakuja)
 2.2.0 - Pet Name Font Change
 2.2.0 - Fixed an issue with the Possesion Bar placement
