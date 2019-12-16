@@ -1,5 +1,6 @@
 # Improved Blizzard UI (Classic Edition ) Changelog
 
+1.0.2 - Remove Bash and Batch files that will kill Curse upload.
 1.0.1 - Patch 1.13.3 ToC Bump
 1.0.0 - Classic Port (Version Refresh due to Fork).
 2.2.0 - German localisation (Credit @Marakuja)
