@@ -7,8 +7,8 @@
 ## OptionalDeps: Ace3
 ## X-Embeds: Ace3
 
-# X-Curse-Project-ID: 103336
-# X-WoWI-ID: 23299
+X-Curse-Project-ID: 355022
+X-WoWI-ID: 25468
 
 # Libraries
 embeds.xml
