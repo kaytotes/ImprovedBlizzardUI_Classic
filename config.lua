@@ -13,6 +13,7 @@ ImpUI_Config.defaults = {
         autoRepair = true,
         autoSell = true,
         minifyStrings = true,
+        hideChatButtons = true,
         styleChat = true,
         chatFont = 'Improved Blizzard UI',
         outlineChat = true,
@@ -1120,6 +1121,26 @@ ImpUI_Config.options = {
                     order = 6,
                 },
 
+                
+                hideChatButtons = {
+                    type = 'toggle',
+                    name = L['Hide Chat Buttons'],
+                    desc = L['Hide the buttons on the side of the chat box such as the up and down arrows, and the social tab button.'],
+                    get = function ()
+                        return ImpUI.db.char.hideChatButtons;
+                    end,
+                    set = function (info, newValue)
+                        ImpUI.db.char.hideChatButtons = newValue;
+
+                        if (newValue == true) then
+                            ImpUI_Chat:HideChatButtons();
+                        else
+                            ImpUI_Chat:ResetChatButtons();
+                        end
+                    end,
+                    order = 7,
+                },
+
                 minifyStrings = {
                     type = 'toggle',
                     name = L['Minify Blizzard Strings'],
@@ -1137,7 +1158,7 @@ ImpUI_Config.options = {
                             ImpUI_Chat:RestoreStrings();
                         end
                     end,
-                    order = 7,
+                    order = 8,
                 },
 
                 styleChat = {
@@ -1156,7 +1177,7 @@ ImpUI_Config.options = {
                             ImpUI_Chat:ResetChat();
                         end
                     end,
-                    order = 8,
+                    order = 9,
                 },
 
                 chatFont = {
@@ -1175,7 +1196,7 @@ ImpUI_Config.options = {
                     disabled = function () 
                         return ImpUI.db.char.styleChat == false;
                     end,
-                    order = 9,
+                    order = 10,
                 },
 
                 outlineChat = {
@@ -1198,7 +1219,7 @@ ImpUI_Config.options = {
                 primaryInterfaceFontHeader = {
                     type = 'header',
                     name = L['Primary Interface Font'],
-                    order = 11,
+                    order = 12,
                 },
 
                 primaryInterfaceFont = {
@@ -1218,13 +1239,13 @@ ImpUI_Config.options = {
                         ImpUI_OrderHall:StyleFrame();
                         ImpUI_CastBar:StyleFrame();
                     end,
-                    order = 12,
+                    order = 13,
                 },
 
                 performanceHeader = {
                     type = 'header',
                     name = L['System Statistics'],
-                    order = 13,
+                    order = 14,
                 },
 
                 performanceFrame = {
@@ -1238,7 +1259,7 @@ ImpUI_Config.options = {
                         ImpUI.db.char.performanceFrame = newValue;
                         ImpUI_MiniMap:StyleMap();
                     end,
-                    order = 14,
+                    order = 15,
                 },
 
                 performanceFrameSize = {
@@ -1256,13 +1277,13 @@ ImpUI_Config.options = {
                         ImpUI_Performance:StylePerformanceFrame();
                     end,
                     isPercent = false,
-                    order = 15,
+                    order = 16,
                 },
 
                 killFeedHeader = {
                     type = 'header',
                     name = L['Kill Feed'],
-                    order = 16,
+                    order = 17,
                 },
 
                 killFeed = {
@@ -1275,7 +1296,7 @@ ImpUI_Config.options = {
                     set = function (info, newValue)
                         ImpUI.db.char.killFeed = newValue;
                     end,
-                    order = 17,
+                    order = 18,
                 },
 
                 killFeedFont = {
@@ -1294,7 +1315,7 @@ ImpUI_Config.options = {
                     disabled = function ()
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 18,
+                    order = 19,
                 },
 
                 killFeedSize = {
@@ -1315,7 +1336,7 @@ ImpUI_Config.options = {
                         return ImpUI.db.char.killFeed == false;
                     end,
                     isPercent = false,
-                    order = 19,
+                    order = 20,
                 },
 
                 killFeedSpacing = {
@@ -1336,7 +1357,7 @@ ImpUI_Config.options = {
                         return ImpUI.db.char.killFeed == false;
                     end,
                     isPercent = false,
-                    order = 20,
+                    order = 21,
                 },
 
                 killFeedShowSpell = {
@@ -1352,7 +1373,7 @@ ImpUI_Config.options = {
                     disabled = function ()
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 21,
+                    order = 22,
                 },
 
                 killFeedShowDamage = {
@@ -1368,7 +1389,7 @@ ImpUI_Config.options = {
                     disabled = function ()
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 22,
+                    order = 23,
                 },
 
                 killFeedFadeInactive = {
@@ -1384,7 +1405,7 @@ ImpUI_Config.options = {
                     disabled = function ()
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 23,
+                    order = 24,
                 },
 
                 killFeedInWorld = {
@@ -1400,7 +1421,7 @@ ImpUI_Config.options = {
                     disabled = function () 
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 24,
+                    order = 25,
                 },
 
                 killFeedInInstance = {
@@ -1416,7 +1437,7 @@ ImpUI_Config.options = {
                     disabled = function () 
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 25,
+                    order = 26,
                 },
 
                 killFeedInPvP = {
@@ -1432,7 +1453,7 @@ ImpUI_Config.options = {
                     disabled = function () 
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 26,
+                    order = 27,
                 },
 
                 killFeedInRaid = {
@@ -1448,7 +1469,7 @@ ImpUI_Config.options = {
                     disabled = function () 
                         return ImpUI.db.char.killFeed == false;
                     end,
-                    order = 27,
+                    order = 28,
                 }
             }
         },

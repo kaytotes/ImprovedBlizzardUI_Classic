@@ -105,15 +105,7 @@ function ImpUI_Chat:BackupBlizzardStrings()
     end
 end
 
---[[
-	Resets the Chat to essentially the default blizzard.
-	
-    @ return void
-]]
-function ImpUI_Chat:ResetChat()
-    -- Restore Edit Box Font
-    ChatFontNormal:SetFont(LSM:Fetch('font', 'Arial Narrow'), 12);
-
+function ImpUI_Chat:ResetChatButtons() 
     -- Restore Chat Channel Button
     if (ImpUI_Chat:IsHooked(ChatFrameMenuButton, 'OnShow')) then
         ImpUI_Chat:Unhook(ChatFrameMenuButton, 'OnShow');
@@ -133,18 +125,48 @@ function ImpUI_Chat:ResetChat()
         button:Show();
     end
     
+     -- Restore Chat Arrows
+     for i = 1, NUM_CHAT_WINDOWS do 
+        local window = _G['ChatFrame'..i]:GetName();
+        if (ImpUI_Chat:IsHooked(_G[window..'ButtonFrame'], 'OnShow')) then
+            ImpUI_Chat:Unhook(_G[window..'ButtonFrame'], 'OnShow');
+            _G[window..'ButtonFrame']:Show();
+        end
+    end
+end
+
+function ImpUI_Chat:HideChatButtons()
+    -- Hide Chat Channels Button
+    ImpUI_Chat:HookScript(ChatFrameMenuButton, 'OnShow', ChatFrameMenuButton.Hide);
+    ChatFrameMenuButton:Hide();
+
+    -- Hide ChatFrameChannelButton
+    ImpUI_Chat:HookScript(ChatFrameChannelButton, 'OnShow', ChatFrameChannelButton.Hide);
+    ChatFrameChannelButton:Hide();
+
+    -- -- Stop Chat Arrows Coming Back
+    for i = 1, NUM_CHAT_WINDOWS do
+        local window = _G['ChatFrame'..i]:GetName();
+        ImpUI_Chat:HookScript(_G[window..'ButtonFrame'], 'OnShow', _G[window..'ButtonFrame'].Hide);
+        _G[window..'ButtonFrame']:Hide();
+    end
+end
+
+--[[
+	Resets the Chat to essentially the default blizzard.
+	
+    @ return void
+]]
+function ImpUI_Chat:ResetChat()
+    -- Restore Edit Box Font
+    ChatFontNormal:SetFont(LSM:Fetch('font', 'Arial Narrow'), 12);
+    
     -- Restore Battle.net Toast
     BNToastFrame:SetClampedToScreen(false);
 
     for i = 1, NUM_CHAT_WINDOWS do
         local window = _G['ChatFrame'..i]:GetName();
         local name, size, r, g, b, alpha, shown, locked, docked, uninteractable = GetChatWindowInfo(i);
-
-        -- Restore Chat Arrows
-        if (ImpUI_Chat:IsHooked(_G[window..'ButtonFrame'], 'OnShow')) then
-            ImpUI_Chat:Unhook(_G[window..'ButtonFrame'], 'OnShow');
-            _G[window..'ButtonFrame']:Show();
-        end
 
         -- Restore Tab Fonts
         local tab = _G[window..'Tab'];
@@ -195,14 +217,6 @@ function ImpUI_Chat:StyleChat()
     ChatFontNormal:SetShadowOffset(1,-1);
     ChatFontNormal:SetShadowColor(0,0,0,0.6);
 
-    -- Hide Chat Channels Button
-    ImpUI_Chat:HookScript(ChatFrameMenuButton, 'OnShow', ChatFrameMenuButton.Hide);
-    ChatFrameMenuButton:Hide();
-
-    -- Hide ChatFrameChannelButton
-    ImpUI_Chat:HookScript(ChatFrameChannelButton, 'OnShow', ChatFrameChannelButton.Hide);
-    ChatFrameChannelButton:Hide();
-
     -- Move Battle.net Toast
     BNToastFrame:SetClampedToScreen(true);
     BNToastFrame:SetClampRectInsets(-15,15,15,-15);
@@ -211,10 +225,6 @@ function ImpUI_Chat:StyleChat()
         local window = _G['ChatFrame'..i]:GetName();
         local name, size, r, g, b, alpha, shown, locked, docked, uninteractable = GetChatWindowInfo(i);
 
-        -- Stop Chat Arrows Coming Back
-        ImpUI_Chat:HookScript(_G[window..'ButtonFrame'], 'OnShow', _G[window..'ButtonFrame'].Hide);
-		_G[window..'ButtonFrame']:Hide();
-        
         -- Style Tab Fonts
         local tab = _G[window..'Tab'];
         local tabFont = tab:GetFontString();
@@ -299,8 +309,14 @@ end
 function ImpUI_Chat:OnEnable()
     local minify = ImpUI.db.char.minifyStrings;
     if (minify == true) then
-        ImpUI_Chat:OverrideStrings();    
+        ImpUI_Chat:OverrideStrings();
     end
+    
+    local hideChatButtons = ImpUI.db.char.hideChatButtons;
+    if (hideChatButtons == true) then
+        ImpUI_Chat:HideChatButtons();
+    end
+    
     ImpUI_Chat:StyleChat();
 
     -- Apply Quality of Life changes that don't need to be toggled.
