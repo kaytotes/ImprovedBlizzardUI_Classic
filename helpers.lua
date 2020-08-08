@@ -176,3 +176,7 @@ function Helpers.ApplyClassColours(statusBar, unit)
         statusBar:SetStatusBarColor(c.r, c.g, c.b );
     end
 end
+
+function Helpers.round(number, decimals)
+    return (("%%.%df"):format(decimals)):format(number);
+end
