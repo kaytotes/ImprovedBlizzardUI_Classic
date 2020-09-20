@@ -109,8 +109,11 @@ function ImpUI:HandleSlash(input)
     end
 end
 
-function ImpUI:Reload()
-    ReloadUI();
+function ImpUI:ReloadModules()
+    for name, module in ImpUI:IterateModules() do
+        module:Disable();
+        module:Enable();
+    end
 end
 
 --[[
@@ -129,9 +132,9 @@ function ImpUI:OnInitialize()
 	ImpUI_Config.options.args.profile = LibStub("AceDBOptions-3.0"):GetOptionsTable(self.db);
 
     -- Reloads after active profile is changed
-    self.db.RegisterCallback(self, "OnProfileChanged", "Reload")
-    self.db.RegisterCallback(self, "OnProfileCopied", "Reload")
-    self.db.RegisterCallback(self, "OnProfileReset", "Reload")
+    self.db.RegisterCallback(self, "OnProfileChanged", "ReloadModules")
+    self.db.RegisterCallback(self, "OnProfileCopied", "ReloadModules")
+    self.db.RegisterCallback(self, "OnProfileReset", "ReloadModules")
 
     -- Register Config
     LibStub('AceConfig-3.0'):RegisterOptionsTable('ImprovedBlizzardUI_Classic', ImpUI_Config.options);
