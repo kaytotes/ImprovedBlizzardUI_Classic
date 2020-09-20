@@ -24,7 +24,7 @@ local GetMoney = GetMoney;
     @ return void
 ]]
 function ImpUI_Repair:MERCHANT_SHOW()
-    if (ImpUI.db.char.autoRepair and CanMerchantRepair()) then
+    if (ImpUI.db.profile.autoRepair and CanMerchantRepair()) then
         local repCost, _ = GetRepairAllCost();
 
         if(repCost <= GetMoney() and repCost > 0) then
