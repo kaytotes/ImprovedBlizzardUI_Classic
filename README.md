@@ -1,3 +1,7 @@
+# DEPRECATION NOTICE
+
+As of 12/10/2020 Improved Blizzard UI is no longer split between WoW versions. Please refer any and all issues / PR's to [the parent repo](https://github.com/kaytotes/ImprovedBlizzardUI)
+
 Improved Blizzard UI (Classic Edition)
 ====================
 
